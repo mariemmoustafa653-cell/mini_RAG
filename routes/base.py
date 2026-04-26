@@ -1,5 +1,11 @@
 from fastapi import FastAPI, APIRouter
-
-base_router = APIRouter()
+import os
+base_router = APIRouter(
+    prefix="/api/v1",
+    tags=["api/v1"],
+)
 @base_router.get("/welcome")
-def welcome():  return {"message": "Welcome to all!"}
+def welcome(): 
+     app_name = os.getenv("APP_NAME")
+     app_version = os.getenv("APP_VERSION") 
+     return {"message": f"Welcome to {app_name} version {app_version}!"}
