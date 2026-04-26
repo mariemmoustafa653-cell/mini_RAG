@@ -5,7 +5,7 @@ base_router = APIRouter(
     tags=["api/v1"],
 )
 @base_router.get("/welcome")
-def welcome(): 
+async def welcome(): 
      app_name = os.getenv("APP_NAME")
      app_version = os.getenv("APP_VERSION") 
      return {"message": f"Welcome to {app_name} version {app_version}!"}
