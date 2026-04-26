@@ -17,7 +17,7 @@ $ conda create -n mini-RAG  python=3.10
 '''bash
 $conda activate mini-RAG
 '''
-4)
+
 
 
 
